@@ -22,10 +22,14 @@ def main():
 		
 		print('CEP: {}'.format(address_data['cep']))
 		print('Logradouro: {}'.format(address_data['logradouro']))
-		print('Complemento: {}'.format(address_data['complemento']))
 		print('Bairro: {}'.format(address_data['bairro']))
-		print('Cidade: {}'.format(address_data['localidade']))
-		print('Estado: {}'.format(address_data['uf']))
+		print('Complemento: {}'.format(address_data['complemento']))
+		print('DDD: {}'.format(address_data['ddd']))
+		print('Gia: {}'.format(address_data['gia']))
+		print('IBGE: {}'.format(address_data['ibge']))
+		print('Localidade: {}'.format(address_data['localidade']))
+		print('Siafi: {}'.format(address_data['siafi']))
+		print('UF: {}'.format(address_data['uf']))
 		
 	else:
 		print('{}: CEP inválido.'.format(cep_input))
