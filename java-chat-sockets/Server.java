@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Server {
+public class Server {	// cria a class server
 
-	private int port;
-	private List<PrintStream> clients;
-	private ServerSocket server;
+	private int port; // define int port
+	private List<PrintStream> clients; // lista de clients
+	private ServerSocket server; // socketserver
 
 	public static void main(String[] args) throws IOException {
-		new Server(12345).run();
+		new Server(12345).run(); // coloca o servidor pra rodar na porta 12345
 	}
 
 	public Server(int port) {
-		this.port = port;
+		this.port = port; // this definido port
 		this.clients = new ArrayList<PrintStream>();
 	}
 
@@ -30,13 +30,13 @@ public class Server {
 				this.close();
 			}
 		};
-		System.out.println("porta 12345 está aberta.");
-		System.out.println("conectado! agora você está online.");
+		System.out.println("porta 12345 está aberta.");	// mensagem de porta aberta aparece
+		System.out.println("conectado! agora você está online."); // mensagem de conectado aparece
 
 		while (true) {
 			// acc novo usuario
 			Socket client = server.accept();
-			System.out.println("estabelecendo conexão com o usuario: " + client.getInetAddress().getHostAddress());
+			System.out.println("estabelecendo conexão com o usuario: " + client.getInetAddress().getHostAddress()); // retorna o ip e pega o endereço
 			
 			// add usuario a lista
 			this.clients.add(new PrintStream(client.getOutputStream()));
@@ -46,7 +46,7 @@ public class Server {
 		}
 	}
 
-	void broadcastMessages(String msg) {
+	void broadcastMessages(String msg) { // mostra msg p todos
 		for (PrintStream client : this.clients) {
 			client.println(msg);
 		}
