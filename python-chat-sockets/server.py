@@ -9,7 +9,7 @@ def handle_user_connection(connection: socket.socket, address: str) -> None:
     '''
     while True:
         try:
-            # pega a msg do cliente
+            # pega a msg do client
             msg = connection.recv(1024)
 
             # se nenhuma mensagem for recebida é pq a conexao falhou
