@@ -1,2 +1,5 @@
-# SDIS
-### IFCE - Campus Cedro
+# IFCE
+### > Sistemas Distribuídos
+---
+🍵
+---
